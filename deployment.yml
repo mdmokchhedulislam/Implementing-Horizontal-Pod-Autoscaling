@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assainment7
+  labels:
+    app: assainment7
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assainment7
+  template:
+    metadata:
+      labels:
+        app: assainment7
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
